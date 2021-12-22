@@ -23,18 +23,19 @@
 
 // 斐波那契数列 1,1,2,3,5,8,11...
 
-// 这写出来，当q=1时，新建C文件后出来的结果不同
 #include <stdio.h>
 int main(void)
 {
-    int sum, q;
-    int month = 3;
+    int sum = 0;
+    int month = 2;
     int num1 = 1; // 第1个月
     int num2 = 1; // 第2个月
+    int q;
     scanf("%d", &q);
     if (q == 1)
     {
-        printf("1"); // 注意是至少，所以如果等于1，就是第一个月，而不是第二个月
+        printf("1\n"); // 注意是至少，所以如果等于1，就是第一个月，而不是第二个月
+        return 0;  // 不可少
     }
     while (sum < q && q > 1)
     {
@@ -43,7 +44,7 @@ int main(void)
         num2 = sum;
         month++;
     }
-    printf("%d", month - 1); // 最后第9个月的时候，sum=34，但在for循环里month已经加到10
+    printf("%d", month); // 最后第9个月的时候，sum=34，但在for循环里month已经加到10
 
     return 0;
 }
