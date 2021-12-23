@@ -37,14 +37,14 @@ int main(void)
         printf("1\n"); // 注意是至少，所以如果等于1，就是第一个月，而不是第二个月
         return 0;  // 不可少
     }
-    while (sum < q && q > 1)
+    while (sum < q && q > 1) // && q > 1可删
     {
         sum = num1 + num2;
         num1 = num2;
         num2 = sum;
         month++;
     }
-    printf("%d", month); // 最后第9个月的时候，sum=34，但在for循环里month已经加到10
+    printf("%d", month); 
 
     return 0;
 }
